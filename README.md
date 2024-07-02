@@ -29,3 +29,9 @@ Instructor
 
 - John Smilga: @CodingAddict
 - Duration: 18h
+
+
+## Creating a WebApp
+- Install NodeJS
+- In pretended directory, type 'npx create-react-app@latest "ProjectName" in cmd'
+- After installation, cd to app directory and type 'npm start'

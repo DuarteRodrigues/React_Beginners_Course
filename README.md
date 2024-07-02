@@ -6,7 +6,12 @@ For React documentation: https://reactjs.org/docs/getting-started.html
 
 The course can be taught through this platform: https://v2.scrimba.com/learn-react-c0e
 
-How to get the most out of this course? - "The easy way is the hard way" - Learn by doing - Avoid "Tutorial Hell" - This isn't school
+How to get the most out of this course? 
+
+    - "The easy way is the hard way" 
+        - Learn by doing 
+        - Avoid "Tutorial Hell"
+        - This isn't school
 
     - Spaced learning & repetition
         - Don't binge the course

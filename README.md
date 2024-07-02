@@ -1,10 +1,8 @@
 # React Beginners Course
 
-This repository is meant to store the code developed during the React Beginners Course taught in this video: https://www.youtube.com/watch?v=bMknfKXIFA8
+This repository is meant to store the code developed during the React Beginners Course taught in this video: https://www.youtube.com/watch?v=2-crBg6wpp0
 
 For React documentation: https://reactjs.org/docs/getting-started.html
-
-The course can be taught through this platform: https://v2.scrimba.com/learn-react-c0e
 
 How to get the most out of this course? 
 
@@ -24,6 +22,10 @@ What you should already know
 - CSS
 - JavaScript
 
+Tools
+- NodeJS
+
 Instructor
 
-- Bob Ziroll: @bobziroll
+- John Smilga: @CodingAddict
+- Duration: 18h

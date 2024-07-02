@@ -35,3 +35,44 @@ Instructor
 - Install NodeJS
 - In pretended directory, type 'npx create-react-app@latest "ProjectName" in cmd'
 - After installation, cd to app directory and type 'npm start'
+
+### Creating First Component
+```js
+function Greeting() {
+    return <h2>My First Component</h2>;
+}
+
+// Arrow function also works
+
+const Greeting = () => {
+    return <h2>My First Component</h2>;
+};
+```
+
+- Starts with capital letter
+- Must return JSX (html)
+- Always close tag <Greeting/>
+
+### Typical Component
+```js
+// imports or logic
+const Greeting = () => {
+    return <h2>My First Component</h2>;
+};
+export default Greeting;
+```
+### Root Component (only one)
+
+in index.js
+```js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+const Greeting = () => {
+    return <h2>My First Component</h2>;
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<Greeting />);
+```

@@ -97,3 +97,16 @@ To get the most out of your environment when developing a react app, you might w
 - JSX syntax (return html)
     - To make our lives easier
     - Calling function under the hood
+
+### JSX Rules
+
+- Always return single element
+- Use HTML semantics to taste, just make sure they are inside the parent component
+- Or use fragments if you wish to not use semantic elements or '<div>' elements:
+
+'''js
+return <React.Fragment>...rest of the return </React.Fragment>;
+
+// Shorthand
+
+return <>...rest of the return</>

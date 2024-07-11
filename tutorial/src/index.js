@@ -5,9 +5,17 @@ import ReactDOM from 'react-dom/client';
 // utilize this one rather than React.createElement, just so you're not calling functions inside functions
 const Greeting = () => {
     return(
+    <div>
         <div>
-            <h2>My First Component</h2>
+            <h3>Hello people</h3>
+            <ul>
+                <li>
+                    <a href="#">Hello World</a>
+                </li>
+            </ul>
         </div>
+        <h2>Hello World</h2>
+    </div>
     );
 };
 

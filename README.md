@@ -109,4 +109,5 @@ return <React.Fragment>...rest of the return </React.Fragment>;
 
 // Shorthand
 
-return <>...rest of the return</>
+return <>...rest of the return</>;
+'''

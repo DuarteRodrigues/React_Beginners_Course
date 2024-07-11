@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 // Determine what is to be rendered inside the root element
 // utilize this one rather than React.createElement, just so you're not calling functions inside functions
-const Greeting = () => {
+/*const Greeting = () => {
     return(
     <div>
         <div>
@@ -16,6 +16,23 @@ const Greeting = () => {
         </div>
         <h2>Hello World</h2>
     </div>
+    );
+};*/
+
+// This is the same as the above, but with JSX, removing the parent element from inspection
+const Greeting = () => {
+    return(
+    <React.Fragment>
+        <div>
+            <h3>Hello people</h3>
+            <ul>
+                <li>
+                    <a href="#">Hello World</a>
+                </li>
+            </ul>
+        </div>
+        <h2>Hello World</h2>
+    </React.Fragment>
     );
 };
 

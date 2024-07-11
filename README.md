@@ -57,6 +57,7 @@ const Greeting = () => {
 ```js
 // imports or logic
 const Greeting = () => {
+    // We want to start our components with capital letters
     return <h2>My First Component</h2>;
 };
 export default Greeting;
@@ -69,6 +70,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 const Greeting = () => {
+    // We want to start our components with capital letters
     return <h2>My First Component</h2>;
 };
 
@@ -76,3 +78,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<Greeting />);
 ```
+
+### Extensions
+
+To get the most out of your environment when developing a react app, you might want to get the following VSC extensions:
+
+ - Prettier: Used for formatting code
+ - ES7 + React/Redux/React-Native snippets: snippets used to call already structured functions to use in the code.
+    - React code snippets include:
+        - rafce: ReactArrowFunctionExportComponent
+        - rafc: ReactArrowFunctionComponent
+        - rfce: ReactFunctionalExportComponent
+
+### First Component in Detail
+
+- Capital letter
+- Must return something
+- JSX syntax (return html)
+    - To make our lives easier
+    - Calling function under the hood

@@ -134,3 +134,11 @@ return (
 '''js
 return <div className = 'someValue'>Hello</div>;
 '''
+
+- close every element
+
+'''js
+return <img />;
+// or
+return <input />;
+'''

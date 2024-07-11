@@ -111,3 +111,20 @@ return <React.Fragment>...rest of the return </React.Fragment>;
 
 return <>...rest of the return</>;
 '''
+
+- camelCase property naming convention
+'''js
+return (
+    <div tabIndex={1}>
+        <button onClick = {myFunction}> Click Me </button>
+        <label htmlFor = 'name'>Name</label>
+        <input readOnly = {true} id = 'name'/>
+    </div>
+)
+// in HTML
+<div tabindex = "1">
+    <button onclick = "myFunction()"> Click Me </button>
+    <label for = "name">Name</label>
+    <input readonly = "true" id = "name"/>
+</div>
+'''

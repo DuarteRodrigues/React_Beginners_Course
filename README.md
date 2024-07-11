@@ -128,3 +128,9 @@ return (
     <input readonly = "true" id = "name"/>
 </div>
 '''
+
+- className instead of class
+
+'''js
+return <div className = 'someValue'>Hello</div>;
+'''

@@ -277,3 +277,15 @@ import './index.css';
     }
 }
 ```
+
+### Local Images (Public Folder)
+
+- External images (hosted on a different server) - jsut need an url
+- Local images (public folder) - less performant
+- Local images (src folder) - better solution for assets, since they get optimized 'under the hood'.
+- Save image (Save Image As...)
+- Create images folder in public
+- Copy/paste image
+- Rename(Optional)
+- Replace url in the src - './images/imageName.extension'
+- './' because assets are on the same server

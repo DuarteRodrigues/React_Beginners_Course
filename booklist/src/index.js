@@ -34,7 +34,8 @@ const Author = () => <h2>Author</h2>;
 */
 
 // Elements with the proper data
-const Image = () => <img src = "https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg" alt = "N1_Best_Seller"></img>;
+//const Image = () => <img src = "https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg" alt = "N1_Best_Seller"></img>; Fetching external URL
+const Image = () => <img src = './IMG/book-1.jpg' alt = "N1_Best_Seller"></img>
 const Title = () => <h4>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h4>;
 const Author =  () => <h4>Rebecca Yarros</h4>
 

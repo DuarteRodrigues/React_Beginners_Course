@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Determine what is to be rendered inside the root element
-// utilize this one rather than React.createElement, just so you're not calling functions inside functions
+// * utilize this one rather than React.createElement, just so you're not calling functions inside functions
 /*const Greeting = () => {
     return (
     <div>
@@ -20,7 +20,7 @@ import ReactDOM from 'react-dom/client';
 };*/
 
 // This is the same as the above, but with JSX, removing the parent element from inspection
-// In JSX, classes are declared via 'className = '' right after the element reference'
+// * In JSX, classes are declared via 'className = '' right after the element reference'
 const Greeting = () => {
     return (
     <React.Fragment>

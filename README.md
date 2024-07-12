@@ -33,7 +33,7 @@ Instructor
 
 ## Creating a WebApp
 - Install NodeJS
-- In pretended directory, type 'npx create-react-app@latest "ProjectName" in cmd'
+- In pretended directory, type 'npx create-react-app@latest "ProjectName" in cmd
 - After installation, cd to app directory and type 'npm start'
 
 ### Creating First Component

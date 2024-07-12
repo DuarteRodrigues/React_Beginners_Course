@@ -170,6 +170,9 @@ const Message = () => {
 - In the app's directory, delete all files in the 'src folder, except for 'index.js'.
 - Start the app with 'npm start' when in the app's directory.
 - In 'index.js', write the following code:
+
+### App Structure
+
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -215,4 +218,62 @@ root.render(<BookList />);
 const Image = () => <img src = "https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg" alt = "N1_Best_Seller"></img>;
 const Title = () => <h4>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h4>;
 const Author =  () => <h4>Rebecca Yarros</h4>
+```
+
+### CSS
+
+- To style the React app, create a css file named 'index.css' in the 'src' folder
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f1f5f8;
+    color: #222;
+}
+```
+
+- import the '.css' file to the '.js' file
+```js
+import './index.css';
+```
+
+- complete the '.css' file
+
+```css
+.booklist{
+    display: grid;
+    gap: 2rem;
+    margin: 5rem auto;
+    max-width: 1170px;
+    width: 90vw;
+}
+
+.book{
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.book img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.book h2{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width:768px) {
+    .booklist{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 ```

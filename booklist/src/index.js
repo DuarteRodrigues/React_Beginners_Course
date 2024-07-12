@@ -1,9 +1,13 @@
+//Library assets
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+// Project assets
+import './CSS/index.css'
+
 function BookList() {
   return (
-    <section>
+    <section className='booklist'>
       <Book />
       <Book />
       <Book />
@@ -14,7 +18,7 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article>
+    <article className='book'>
       <Image />
       <Title />
       <Author />

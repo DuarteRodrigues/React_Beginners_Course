@@ -21,7 +21,7 @@ import ReactDOM from 'react-dom/client';
 
 // This is the same as the above, but with JSX, removing the parent element from inspection
 // * In JSX, classes are declared via 'className = '' right after the element reference'
-const Greeting = () => {
+/*const Greeting = () => {
     return (
     <React.Fragment>
         <div className='someValue'> 
@@ -35,6 +35,21 @@ const Greeting = () => {
         <h2>Hello World</h2>
     </React.Fragment>
     );
+};*/
+
+// This is the same function as above, but with component nesting
+const Greeting = () => {
+    return (
+        <div>
+            <Person />
+            <Message />
+        </div>
+    );
+};
+
+const Person = () => <h2>John Doe</h2>;
+const Message = () => {
+    return <p>this is my message</p>;
 };
 
 // Another way to render elements

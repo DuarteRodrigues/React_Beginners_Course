@@ -158,5 +158,8 @@ const Person = () => <h2>John Doe</h2>;
 const Message = () => {
     return <p>this is my message</p>;
 };
-
 ```
+
+### React Developer Tools
+
+- Download the 'React Developer Tools' extension in the Chrome Web Store page -> https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi

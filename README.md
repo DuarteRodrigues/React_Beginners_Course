@@ -163,3 +163,5 @@ const Message = () => {
 ### React Developer Tools
 
 - Download the 'React Developer Tools' extension in the Chrome Web Store page -> https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+- Inspect elements in your webapp to find the 'Components' tab, which will help you understand the structure of the elements in the page and help you troubleshoot any problem you might come across!

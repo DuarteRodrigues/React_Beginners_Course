@@ -33,7 +33,7 @@ Instructor
 
 ## Creating a WebApp
 - Install NodeJS
-- In pretended directory, type 'npx create-react-app@latest "ProjectName" in cmd
+- In pretended directory, type 'npx create-react-app@latest "ProjectName"' in cmd
 - After installation, cd to app directory and type 'npm start'
 
 ### Creating First Component
@@ -89,6 +89,10 @@ To get the most out of your environment when developing a react app, you might w
         - rafce: ReactArrowFunctionExportComponent
         - rafc: ReactArrowFunctionComponent
         - rfce: ReactFunctionalExportComponent
+
+- React Developer Tools (Google Chrome)
+    - Download the 'React Developer Tools' extension in the Chrome Web Store page -> https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+    - Inspect elements in your webapp to find the 'Components' tab, which will help you understand the structure of the elements in the page and help you troubleshoot any problem you might come across!
 
 ### First Component in Detail
 
@@ -160,8 +164,55 @@ const Message = () => {
 };
 ```
 
-### React Developer Tools
+## Book list App
 
-- Download the 'React Developer Tools' extension in the Chrome Web Store page -> https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+- Create a new react app with 'npx create-react-app@latest "booklist"'.
+- In the app's directory, delete all files in the 'src folder, except for 'index.js'.
+- Start the app with 'npm start' when in the app's directory.
+- In 'index.js', write the following code:
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-- Inspect elements in your webapp to find the 'Components' tab, which will help you understand the structure of the elements in the page and help you troubleshoot any problem you might come across!
+function BookList() {
+    return (
+        <section>
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
+    );
+};
+
+const Book = () => {
+    return (
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    );
+};
+
+const Image = () => <h2>image placeholder</h2>;
+const Title = () => <h2>Book Title</h2>;
+const Author = () => <h2>Author</h2>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<BookList />);
+```
+
+- In your search engine, type 'amazon best selling books'
+- [Amazon Best Sellers] (https://www.amazon.com/Best-Sellers-Books/zgbs/books)
+- DO NOT BUY ANYTHING !!!
+- NOT AN AFFILIATE LINK !!!
+- Choose a book
+- Copy image, title and author
+
+```js
+const Image = () => <img src = "https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg" alt = "N1_Best_Seller"></img>;
+const Title = () => <h4>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h4>;
+const Author =  () => <h4>Rebecca Yarros</h4>
+```

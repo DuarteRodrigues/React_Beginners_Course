@@ -104,16 +104,16 @@ To get the most out of your environment when developing a react app, you might w
 - Use HTML semantics to taste, just make sure they are inside the parent component
 - Or use fragments if you wish to not use semantic elements or '<div>' elements:
 
-'''js
+```js
 return <React.Fragment>...rest of the return </React.Fragment>;
 
 // Shorthand
 
 return <>...rest of the return</>;
-'''
+```
 
 - camelCase property naming convention
-'''js
+```js
 return (
     <div tabIndex={1}>
         <button onClick = {myFunction}> Click Me </button>
@@ -127,18 +127,18 @@ return (
     <label for = "name">Name</label>
     <input readonly = "true" id = "name"/>
 </div>
-'''
+```
 
 - className instead of class
 
-'''js
+```js
 return <div className = 'someValue'>Hello</div>;
-'''
+```
 
 - close every element
 
-'''js
+```js
 return <img />;
 // or
 return <input />;
-'''
+```

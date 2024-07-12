@@ -142,3 +142,21 @@ return <img />;
 // or
 return <input />;
 ```
+
+### Nest Components
+```js
+const Greeting = () => {
+    return (
+        <div>
+            <Person />
+            <Message />
+        </div>
+    );
+};
+
+const Person = () => <h2>John Doe</h2>;
+const Message = () => {
+    return <p>this is my message</p>;
+};
+
+```

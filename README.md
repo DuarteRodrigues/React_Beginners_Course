@@ -133,13 +133,13 @@ return (
 </div>
 ```
 
-- className instead of class
+- ClassName instead of class
 
 ```js
 return <div className = 'someValue'>Hello</div>;
 ```
 
-- close every element
+- Close every element
 
 ```js
 return <img />;
@@ -238,12 +238,12 @@ body{
 }
 ```
 
-- import the '.css' file to the '.js' file
+- Import the '.css' file to the '.js' file
 ```js
 import './index.css';
 ```
 
-- complete the '.css' file
+- Complete the '.css' file
 
 ```css
 .booklist{
@@ -289,3 +289,45 @@ import './index.css';
 - Rename(Optional)
 - Replace url in the src - './images/imageName.extension'
 - './' because assets are on the same server
+
+### JSX - CSS (inline styles)
+
+- Style prop
+- {} in JSX means going back to JS Land
+- Value is an object with key/value pairs - capitalized and with ''
+
+```js
+const Author = () => (
+    <h4 style = {{color: '#617d98', fontSize:'0.75', marginTop: '0.5rem'}}>
+    Rebecca Yarros
+    </h4>
+)
+```
+
+- CSS rules still apply (inline vs external css)
+
+```css
+.book h4{
+    /* won't work <- This one actually works lol*/ 
+    color: red;
+    /* will work */
+    letter-spacing: 2px;
+}
+```
+- External libraries use inline css, so if you want to make some changes, reference the library docs and elements tabs
+
+- Alternative option
+
+```js
+const Author = () => {
+    const inLineHeadingStyles = {
+        color: '#617d98',
+        fontSize: '0.75rem',
+        marginTop: '0.5rem',
+    };
+    return <h4 style={inLineHeadingStyles}>Jordan Moore</h4>;
+};
+```
+
+- For the most part, multiple approaches are available, so pick the one you think is best
+- As long as the result is the same, the approaches come down to personal preference

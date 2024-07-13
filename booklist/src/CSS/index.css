@@ -35,6 +35,10 @@ body{
     margin-top: 1rem;
 }
 
+.book h4{
+    letter-spacing: 2px;
+}
+
 @media screen and (min-width:768px) {
     .booklist{
         grid-template-columns: repeat(3, 1fr);

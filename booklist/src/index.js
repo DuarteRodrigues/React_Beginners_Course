@@ -26,6 +26,19 @@ const Book = () => {
   );
 };
 
+//Using JSX to render elements
+/*const Book = () => {
+  const Title = "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)"; <- These values can be declared outside the function
+  const Author = "Rebecca Yarros";
+  return (
+    <article className='book'>
+      <Image />
+      <h2>{Title}</h2>
+      <h4>{Author.toUpperCase()}</h4>
+    </article>
+  );
+};
+*/
 // Elements with place holders
 /*
 const Image = () => <h2>image placeholder</h2>;
@@ -36,7 +49,7 @@ const Author = () => <h2>Author</h2>;
 // Elements with the proper data
 //const Image = () => <img src = "https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg" alt = "N1_Best_Seller"></img>; Fetching external URL
 const Image = () => <img src = './IMG/book-1.jpg' alt = "N1_Best_Seller"></img>
-const Title = () => <h4>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h4>;
+const Title = () => <h2>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h2>;
 // Add inline styling with JSX
 const Author =  () => <h4 style = {{color: '#617d98', fontSize:'0.75', marginTop: '0.5rem'}} >Rebecca Yarros</h4>
 // Alternative where the styling options are nested

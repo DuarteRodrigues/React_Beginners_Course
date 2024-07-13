@@ -330,4 +330,49 @@ const Author = () => {
 ```
 
 - For the most part, multiple approaches are available, so pick the one you think is best
-- As long as the result is the same, the approaches come down to personal preference
+- As long as the result is the same, the approaches come down to personal preference~
+
+### JSX - Javascript
+
+- refactor to single book component (personal preference)
+- remove inline CSS
+
+```js
+const Book = () => {
+    return (
+        <article className = 'book'>
+            <img src = './IMG/book-1.png'
+                 alt = 'N1_Best_Seller'
+            />
+            <h2>Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)</h2>
+            <h4>Rebecca Yarros</h4>
+        </article>
+    )
+};
+```
+
+```css
+.book h4{
+    color: #617d98;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+}
+```
+
+- {} in JSX means going back to JS Land
+- Value inside must be an expression (return value), can't be a statement
+
+```js
+const Book = () => {
+  const Title = "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)"; //<- These values can be declared outside the function
+  const Author = "Rebecca Yarros";
+  return (
+    <article className='book'>
+      <Image />
+      <h2>{Title}</h2>
+      <h4>{Author}</h4>
+    </article>
+  );
+};
+```

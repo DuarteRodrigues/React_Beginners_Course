@@ -376,3 +376,43 @@ const Book = () => {
   );
 };
 ```
+
+### Props - Initial Setup
+
+- Refractor/clean up
+
+```js
+const author = 'Rebecca Yarros';
+const title = 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)';
+const img = './IMG/book-1.jpg';
+
+function Booklist() {
+    return (
+        <section className='booklist'>
+            <Book />
+            <Book />
+        </section>    
+    );
+};
+
+const Book = () => {
+    return (
+        <article className='book'>
+            <img src = {img} alt = {title} />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+        </article>
+    );
+};
+```
+
+- Test the values to put in the elements before sending them
+
+```js
+// Parameters
+const someFunc = (param1, param2) => {
+    console.log(param1, param2);
+};
+// Call
+someFunc('Hello', 'World'); // Output: Hello World
+```

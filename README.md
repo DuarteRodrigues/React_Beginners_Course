@@ -416,3 +416,49 @@ const someFunc = (param1, param2) => {
 // Call
 someFunc('Hello', 'World'); // Output: Hello World
 ```
+
+- Utilize props to call different values to the elements
+
+```js
+// Declare prop values
+const img = './IMG/book-1.jpg';
+const title = 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)';
+const author = 'Rebecca Yarros';
+
+// Declare the props for each element
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book img = {img} title = {title} author = {author.toUpperCase()}/> 
+      <Book img = {img} title = {title} author = {author.toUpperCase()}/>
+      <Book />
+      <Book />
+    </section>
+  );
+};
+
+// Declare what props are used on what elements
+const Book = (props) => {
+  console.log(props);
+  // Create the 'const' type objects inside the function when using props
+  const Image = () => <img src= {props.img} alt = {props.title}></img>
+  const Title = () => <h2>{title}</h2>;
+  // Add inline styling with JSX
+  const Author = () => {
+    const inLineHeadingStyles = {
+        color: '#617d98',
+        fontSize: '0.75rem',
+        marginTop: '0.5rem',
+    };
+    return <h4 style = {inLineHeadingStyles}>{props.author}</h4>;
+  };
+  // Call for all the elements to be from the book to be shown
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+```

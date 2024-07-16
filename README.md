@@ -500,6 +500,45 @@ function BookList() {
     </section>
   );
 };
+```
 
+### Props - Multiple Approaches
 
+- The approaches are up to choice and the project you wish to develop
+- Destructuring in Vanilla JS
+- Saves time/typing
+- Pull out the properties
+- Don't need to reference objects anymore
+
+```js
+const someObject = {
+    name: 'john',
+    job: 'developer',
+    location: 'florida'
+};
+
+// Instead of doing this
+console.log(someObject.name);
+
+// Do this
+const {name, job, location} = someObject;
+console.log(job);
+```
+
+- No need for all the 'props.propName'
+- Destructure inside component
+
+For our case, we will use the following deconstruction:
+
+```js
+const Book = (props) => {
+    const {img, title, author} = props;
+    return (
+        <article className = 'book'>
+            <img src = {img} alt = {title} />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+        </article>
+    );
+};
 ```

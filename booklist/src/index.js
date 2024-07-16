@@ -65,28 +65,33 @@ const Author = () => {
 function BookList() {
   return (
     <section className='booklist'>
-      <Book 
-          img = {firstBook.img} 
-          title = {firstBook.title} 
-          author = {firstBook.author.toUpperCase()}
-        /> 
       <Book
-          img = {secondBook.img} 
-          title = {secondBook.title} 
-          author = {secondBook.author.toUpperCase()}
-        />
+        img = {firstBook.img} 
+        title = {firstBook.title} 
+        author = {firstBook.author.toUpperCase()}
+        >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button>Click me!</button>
+      </Book> 
+      <Book
+        img = {secondBook.img} 
+        title = {secondBook.title} 
+        author = {secondBook.author.toUpperCase()}
+        >
+      </Book>
       <Book />
       <Book />
     </section>
   );
 };
 
+// Book element
 const Book = (props) => {
   // Check if values were passed correctly
   console.log(props);
 
   // Setup deconstruction 
-  const {img, title, author} = props
+  const {img, title, author, children} = props
   
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src= {img} alt = {title}></img>
@@ -107,6 +112,7 @@ const Book = (props) => {
       <Image />
       <Title />
       <Author />
+      {children}
     </article>
   );
 };

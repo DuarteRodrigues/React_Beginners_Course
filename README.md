@@ -542,3 +542,55 @@ const Book = (props) => {
     );
 };
 ```
+
+### Children Prop
+
+- Everything we render between component tags
+- During the course we will mostly use children props for Context API
+- Special prop, has to be "children"
+- Can be placed anywhere in JSX
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book
+        img = {firstBook.img} 
+        title = {firstBook.title} 
+        author = {firstBook.author.toUpperCase()}
+        >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button>Click me!</button>
+      </Book> 
+      <Book
+        img = {secondBook.img} 
+        title = {secondBook.title} 
+        author = {secondBook.author.toUpperCase()}
+        >
+      </Book>
+    </section>
+  );
+};
+```
+
+Set it up as one of the props
+```js
+// Book element
+const Book = (props) => {
+
+  // Setup deconstruction 
+  const {img, title, author, children} = props
+  
+  // ...
+
+  // Call for all the elements to be from the book to be shown
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+      {children}
+    </article>
+  );
+};
+```

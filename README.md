@@ -462,3 +462,44 @@ const Book = (props) => {
   );
 };
 ```
+
+### Props - More Dynamic Setup
+
+- Setup an object
+- Refactor vars to properties
+- Copy/paste and rename
+- Get values for second book
+- Setup Props
+
+```js
+const firstBook = {
+    img : './IMG/book-1.jpg',
+    title : 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
+    author : 'Rebecca Yarros'
+};
+
+const secondBook = {
+    img: './IMG/book-2.jpg',
+    title: 'I Love You to the Moon and Back',
+    author: 'Amelia Hepworth'
+};
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book 
+          img = {firstBook.img} 
+          title = {firstBook.title} 
+          author = {firstBook.author.toUpperCase()}
+        /> 
+      <Book
+          img = {secondBook.img} 
+          title = {secondBook.title} 
+          author = {secondBook.author.toUpperCase()}
+        />
+    </section>
+  );
+};
+
+
+```

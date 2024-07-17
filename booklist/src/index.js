@@ -14,6 +14,7 @@ const author = 'Rebecca Yarros';
 */
 
 /// Structures of props
+/*
 const firstBook = {
   img: './IMG/book-1.jpg',
   title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
@@ -25,6 +26,20 @@ const secondBook = {
   title: 'I Love You to the Moon and Back',
   author: 'Amelia Hepworth'
 }
+*/
+
+const books = [
+  {
+      img: './IMG/book-1.jpg',
+      title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
+      author: 'Rebecca Yarros'
+  },
+  {
+      img: './IMG/book-2.jpg',
+      title: 'I Love You to the Moon and Back',
+      author: 'Amelia Hepworth'
+  }
+];
 
 // Parameters
 const someFunc = (param1, param2) => {
@@ -62,25 +77,18 @@ const Author = () => {
 };
 */
 
+const names = ['john', 'peter', 'susan'];
+
+// Mapping values inside an array
+const newNames = names.map((name) => {
+  console.log(name);
+  return <h1>{name}</h1>;
+});
+
 function BookList() {
   return (
-    <section className='booklist'>
-      <Book
-        img = {firstBook.img} 
-        title = {firstBook.title} 
-        author = {firstBook.author.toUpperCase()}
-        >
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button>Click me!</button>
-      </Book> 
-      <Book
-        img = {secondBook.img} 
-        title = {secondBook.title} 
-        author = {secondBook.author.toUpperCase()}
-        >
-      </Book>
-      <Book />
-      <Book />
+    <section className='booklist'>{newNames}
+
     </section>
   );
 };

@@ -594,3 +594,36 @@ const Book = (props) => {
   );
 };
 ```
+
+### Simple List
+
+- Refactor
+
+```js
+const books = [
+    {
+        img: './IMG/book-1.jpg',
+        title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
+        author: 'Rebecca Yarros'
+    },
+    {
+        img: './IMG/book-2.jpg',
+        title: 'I Love You to the Moon and Back',
+        author: 'Amelia Hepworth'
+    }
+];
+```
+
+- Map - creates a new array from calling a function for every array element.
+
+```js
+const names = ['john', 'peter', 'susan'];
+const newNames = names.map((name) => {
+    console.log(name);
+    return <h1>{name}</h1>;
+});
+
+function BookList() {
+    return <section className = 'booklist'>{newNames}</section>;
+}
+```

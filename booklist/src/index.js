@@ -32,12 +32,12 @@ const books = [
   {
       img: './IMG/book-1.jpg',
       title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
-      author: 'Rebecca Yarros'
+      author: 'Rebecca Yarros',
   },
   {
       img: './IMG/book-2.jpg',
       title: 'I Love You to the Moon and Back',
-      author: 'Amelia Hepworth'
+      author: 'Amelia Hepworth',
   }
 ];
 
@@ -45,6 +45,7 @@ const books = [
 const someFunc = (param1, param2) => {
   console.log(param1, param2);
 };
+
 // Call
 someFunc('job', 'developer'); // Output: Hello World
 
@@ -77,18 +78,18 @@ const Author = () => {
 };
 */
 
-const names = ['john', 'peter', 'susan'];
-
 // Mapping values inside an array
-const newNames = names.map((name) => {
-  console.log(name);
-  return <h1>{name}</h1>;
-});
-
 function BookList() {
   return (
-    <section className='booklist'>{newNames}
-
+    <section className='booklist'>
+      {books.map((book) => {
+        console.log(book);
+        const {img, title, author} = book;
+        return (
+          <Book img = {img} title = {title} author = {author.toUpperCase()}></Book>
+        );
+        })
+      }
     </section>
   );
 };
@@ -99,7 +100,7 @@ const Book = (props) => {
   console.log(props);
 
   // Setup deconstruction 
-  const {img, title, author, children} = props
+  const {img, title, author} = props
   
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src= {img} alt = {title}></img>
@@ -120,7 +121,6 @@ const Book = (props) => {
       <Image />
       <Title />
       <Author />
-      {children}
     </article>
   );
 };

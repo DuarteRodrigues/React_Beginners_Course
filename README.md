@@ -627,3 +627,26 @@ function BookList() {
     return <section className = 'booklist'>{newNames}</section>;
 }
 ```
+
+### Proper List
+
+- Remove names and newNames
+
+```js
+function Booklist() {
+    return (
+        <section className = 'booklist'>
+            {books.map((book) => {
+                console.log(book);
+
+                //return 'hello';
+                return (
+                    <div>
+                        <h2>{book.title}</h2>
+                    </div>
+                );
+            })}
+        </section>
+    );
+}
+```

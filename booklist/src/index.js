@@ -30,11 +30,13 @@ const secondBook = {
 
 const books = [
   {
+      id: 1,
       img: './IMG/book-1.jpg',
       title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
       author: 'Rebecca Yarros',
   },
   {
+      id: 2,
       img: './IMG/book-2.jpg',
       title: 'I Love You to the Moon and Back',
       author: 'Amelia Hepworth',
@@ -84,9 +86,9 @@ function BookList() {
     <section className='booklist'>
       {books.map((book) => {
         console.log(book);
-        const {img, title, author} = book;
+        const {id, img, title, author} = book;
         return (
-          <Book img = {img} title = {title} author = {author.toUpperCase()}></Book>
+          <Book img = {img} title = {title} author = {author.toUpperCase()} key = {id}></Book>
         );
         })
       }

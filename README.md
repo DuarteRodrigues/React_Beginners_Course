@@ -650,3 +650,26 @@ function Booklist() {
     );
 }
 ```
+
+### Key Prop
+
+- Typically, it will be an ID
+
+```js
+const books = [
+    {
+        id: 1,
+        img: './IMG/book-1.jpg',
+        title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
+        author: 'Rebecca Yarros',
+    },
+    {
+        id: 2,
+        img: './IMG/book-2.jpg',
+        title: 'I Love You to the Moon and Back',
+        author: 'Amelia Hepworth',
+    },
+];
+```
+
+- Typically, you'll see 'list.map((element, index) => {' frequently in other people's code, however, it is not advised to use that technique

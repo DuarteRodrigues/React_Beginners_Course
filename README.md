@@ -673,3 +673,25 @@ const books = [
 ```
 
 - Typically, you'll see 'list.map((element, index) => {' frequently in other people's code, however, it is not advised to use that technique
+
+### Pass the Entire Object
+
+- Render component
+- Pass entire object
+- Deconstructing object
+
+```js
+function Booklist() {
+    return (
+        <section className = 'booklist'>
+        {books.map((book) => {
+            console.log(book);
+            const { img, title, author } = book;
+            return <Book book = {book} />;
+        })}
+        </section>
+    );
+}
+```
+
+- You won't need to deconstruct the object if you are going to pass it fully

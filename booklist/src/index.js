@@ -28,15 +28,16 @@ const secondBook = {
 }
 */
 
+/// List of props
 const books = [
   {
-      id: 1,
+      id: 1, // Key Prop
       img: './IMG/book-1.jpg',
       title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
       author: 'Rebecca Yarros',
   },
   {
-      id: 2,
+      id: 2, // Key Prop
       img: './IMG/book-2.jpg',
       title: 'I Love You to the Moon and Back',
       author: 'Amelia Hepworth',
@@ -86,12 +87,15 @@ function BookList() {
     <section className='booklist'>
       {books.map((book) => {
         console.log(book);
-        const {id, img, title, author} = book;
+        // Setup deconstruction
+        //const {id, img, title, author} = book;
         return (
-          <Book img = {img} title = {title} author = {author.toUpperCase()} key = {id}></Book>
+          <Book 
+            book = {book} 
+            key = {book.id}> 
+          </Book>
         );
-        })
-      }
+      })}
     </section>
   );
 };
@@ -102,7 +106,7 @@ const Book = (props) => {
   console.log(props);
 
   // Setup deconstruction 
-  const {img, title, author} = props
+  const {img, title, author} = props.book;
   
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src= {img} alt = {title}></img>
@@ -114,7 +118,7 @@ const Book = (props) => {
         fontSize: '0.75rem',
         marginTop: '0.5rem',
     };
-    return <h4 style = {inLineHeadingStyles}>{author}</h4>;
+    return <h4 style = {inLineHeadingStyles}>{author.toUpperCase()}</h4>;
   };
 
   // Call for all the elements to be from the book to be shown

@@ -89,9 +89,11 @@ function BookList() {
         console.log(book);
         // Setup deconstruction
         //const {id, img, title, author} = book;
+
+        //Pass the object 'book' as prop using Spread Operator (...)
         return (
           <Book 
-            book = {book} 
+           {...book} 
             key = {book.id}> 
           </Book>
         );
@@ -106,7 +108,8 @@ const Book = (props) => {
   console.log(props);
 
   // Setup deconstruction 
-  const {img, title, author} = props.book;
+  // With Spread Operator in 'BookList' function, no need to use props.book
+  const {img, title, author} = props;
   
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src= {img} alt = {title}></img>

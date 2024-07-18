@@ -694,4 +694,64 @@ function Booklist() {
 }
 ```
 
-- You won't need to deconstruct the object if you are going to pass it fully
+- You won't need to deconstruct the object if you are going to pass it fully, at least not in this function.
+
+### Spread Operator
+
+- Utilize Spread Operator (...) - copy values
+
+```js
+const friends = ['john', 'peter', 'anna'];
+const newFriends = [...friends, 'mike', 'steve'];
+console.log(friends);
+console.log(newFriends);
+const someObject = {
+    name: 'john',
+    job: 'developer',
+};
+// COPY NOT A REFERENCE !!!
+const newObject = {...someObject, location: 'florida'};
+console.log(someObject);
+console.log(newObject);
+```
+
+```js
+function BookList() {
+  return (
+    <section className='booklist'>
+      {books.map((book) => {
+        return (
+          <Book 
+           {...book} 
+            key = {book.id}> 
+          </Book>
+        );
+      })}
+    </section>
+  );
+};
+
+const Book = (props) => {
+  console.log(props);
+  const {img, title, author} = props;
+  
+  const Image = () => <img src= {img} alt = {title}></img>
+  const Title = () => <h2>{title}</h2>;
+  const Author = () => {
+    const inLineHeadingStyles = {
+        color: '#617d98',
+        fontSize: '0.75rem',
+        marginTop: '0.5rem',
+    };
+    return <h4 style = {inLineHeadingStyles}>{author.toUpperCase()}</h4>;
+  };
+
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+```

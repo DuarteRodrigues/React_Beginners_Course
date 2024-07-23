@@ -28,6 +28,7 @@ const secondBook = {
 }
 */
 
+/// List of props
 const books = [
   {
     id: 1,

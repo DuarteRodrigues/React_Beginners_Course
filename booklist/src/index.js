@@ -1,9 +1,9 @@
 //Library assets
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // Project assets
-import './CSS/index.css'
+import "./CSS/index.css";
 
 // Props
 /// Individual Props
@@ -30,17 +30,17 @@ const secondBook = {
 
 const books = [
   {
-      id: 1,
-      img: './IMG/book-1.jpg',
-      title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
-      author: 'Rebecca Yarros',
+    id: 1,
+    img: "./IMG/book-1.jpg",
+    title: "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)",
+    author: "Rebecca Yarros",
   },
   {
-      id: 2,
-      img: './IMG/book-2.jpg',
-      title: 'I Love You to the Moon and Back',
-      author: 'Amelia Hepworth',
-  }
+    id: 2,
+    img: "./IMG/book-2.jpg",
+    title: "I Love You to the Moon and Back",
+    author: "Amelia Hepworth",
+  },
 ];
 
 // Parameters
@@ -49,7 +49,7 @@ const someFunc = (param1, param2) => {
 };
 
 // Call
-someFunc('job', 'developer'); // Output: Hello World
+someFunc("job", "developer"); // Output: Hello World
 
 // Elements with place holders
 /*
@@ -83,15 +83,44 @@ const Author = () => {
 // Mapping values inside an array
 function BookList() {
   return (
-    <section className='booklist'>
+    <section className="booklist">
+      <EventExamples />
       {books.map((book) => {
         console.log(book);
-        const {id, img, title, author} = book;
+        const { id, img, title, author } = book;
         return (
-          <Book img = {img} title = {title} author = {author.toUpperCase()} key = {id}></Book>
+          <Book
+            img={img}
+            title={title}
+            author={author.toUpperCase()}
+            key={id}
+          ></Book>
         );
-        })
-      }
+      })}
+    </section>
+  );
+}
+
+//Event Element
+const EventExamples = () => {
+  const handleFormInput = () => {
+    console.log("handle form input");
+  };
+  const handleButtonInput = () => {
+    alert("handle button input");
+  };
+  return (
+    <section>
+      <form>
+        <h2>Typical Form</h2>
+        <input
+          type="text"
+          name="example"
+          onChange={handleFormInput}
+          style={{ margin: "1rem 0" }}
+        ></input>
+      </form>
+      <button onClick={handleButtonInput}>click me</button>
     </section>
   );
 };
@@ -101,25 +130,25 @@ const Book = (props) => {
   // Check if values were passed correctly
   console.log(props);
 
-  // Setup deconstruction 
-  const {img, title, author} = props
-  
+  // Setup deconstruction
+  const { img, title, author } = props;
+
   // Create the 'const' type objects inside the function when using props
-  const Image = () => <img src= {img} alt = {title}></img>
+  const Image = () => <img src={img} alt={title}></img>;
   const Title = () => <h2>{title}</h2>;
   // Add inline styling with JSX
   const Author = () => {
     const inLineHeadingStyles = {
-        color: '#617d98',
-        fontSize: '0.75rem',
-        marginTop: '0.5rem',
+      color: "#617d98",
+      fontSize: "0.75rem",
+      marginTop: "0.5rem",
     };
-    return <h4 style = {inLineHeadingStyles}>{author}</h4>;
+    return <h4 style={inLineHeadingStyles}>{author}</h4>;
   };
 
   // Call for all the elements to be from the book to be shown
   return (
-    <article className='book'>
+    <article className="book">
       <Image />
       <Title />
       <Author />
@@ -143,7 +172,7 @@ const Book = () => {
 */
 
 // Fetch root element in HTML file
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // Render the component from the first layer
 root.render(<BookList />);

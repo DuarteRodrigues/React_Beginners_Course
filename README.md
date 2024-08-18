@@ -879,3 +879,36 @@ const EventExamples = () => {
   );
 };
 ```
+
+### Mind Grenade - Component Feature
+
+- Remove EventsExamples
+- Components are independent by default
+
+```js
+function Booklist() {
+  return (
+    <section className = 'booklist'>
+      {books.map((book) => {
+        return <Book {...book} key = {book.id} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props;
+  const displayTitle = () => {
+    console.log(title);
+  }
+
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <button onClick = {displayTitle}>display title</button>
+      <Author />
+    </article>
+  );
+};
+```

@@ -84,17 +84,17 @@ const Author = () => {
 // Mapping values inside an array
 function BookList() {
   return (
-    <section className="booklist">
+    <section className = "booklist">
       <EventExamples />
       {books.map((book) => {
         console.log(book);
         const { id, img, title, author } = book;
         return (
           <Book
-            img={img}
-            title={title}
-            author={author.toUpperCase()}
-            key={id}
+            img = {img}
+            title = {title}
+            author = {author.toUpperCase()}
+            key = {id}
           ></Book>
         );
       })}
@@ -116,24 +116,24 @@ const EventExamples = () => {
     alert("handle button input");
   };
 
-  const HandleFormSubmission = (e) => {
+  const handleFormSubmission = (e) => {
     e.preventDefault();
     console.log("form submitted");
   };
 
   return (
     <section>
-      <form onSubmit={HandleFormSubmission}>
+      <form onSubmit = {handleFormSubmission}>
         <h2>Typical Form</h2>
         <input
-          type="text"
-          name="example"
-          onChange={handleFormInput}
-          style={{ margin: "1rem 0" }}
+          type = "text"
+          name = "example"
+          onChange = {handleFormInput}
+          style = {{ margin: "1rem 0" }}
         ></input>
-        <button type="submit">submit</button>
+        <button type = "submit">submit</button>
         <div>
-        <button onClick={handleButtonInput/* or () => console.log("form submitted");*/ } type="button">
+        <button onClick = {handleButtonInput/* or () => console.log("form submitted"); */} type="button">
           click me
         </button>
         </div>
@@ -151,7 +151,7 @@ const Book = (props) => {
   const { img, title, author } = props;
 
   // Create the 'const' type objects inside the function when using props
-  const Image = () => <img src={img} alt={title}></img>;
+  const Image = () => <img src = {img} alt = {title}></img>;
   const Title = () => <h2>{title}</h2>;
   // Add inline styling with JSX
   const Author = () => {
@@ -162,12 +162,17 @@ const Book = (props) => {
     };
     return <h4 style={inLineHeadingStyles}>{author}</h4>;
   };
+  // Add event to display the title of the books
+  const displayTitle = () => {
+    console.log(title);
+  };
 
   // Call for all the elements to be from the book to be shown
   return (
-    <article className="book">
+    <article className = "book">
       <Image />
       <Title />
+      <button onClick = {displayTitle}>display title</button>
       <Author />
     </article>
   );

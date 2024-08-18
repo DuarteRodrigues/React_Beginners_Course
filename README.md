@@ -863,3 +863,19 @@ const EventExamples = () => {
   submit form
   </button>
 ```
+
+### Mind Grenade - Arrow Functions
+
+- Alternative approach
+- Pass anonymous function (in this case, arrow function)
+- one liner - less code
+
+```js
+const EventExamples = () => {
+  return (
+    <section>
+      <button onClick={() => console.log('hello there')}>click me</button>
+    </section>
+  );
+};
+```

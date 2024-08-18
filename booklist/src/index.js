@@ -133,7 +133,9 @@ const EventExamples = () => {
         ></input>
         <button type="submit">submit</button>
         <div>
-        <button onClick={handleButtonInput} type="button">click me</button>
+        <button onClick={handleButtonInput/* or () => console.log("form submitted");*/ } type="button">
+          click me
+        </button>
         </div>
       </form>
     </section>

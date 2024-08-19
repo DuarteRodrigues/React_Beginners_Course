@@ -297,7 +297,7 @@ import "./index.css";
 
 ### Local Images (Public Folder)
 
-- External images (hosted on a different server) - jsut need an url
+- External images (hosted on a different server) - just need an url
 - Local images (public folder) - less performant
 - Local images (src folder) - better solution for assets, since they get optimized 'under the hood'.
 - Save image (Save Image As...)

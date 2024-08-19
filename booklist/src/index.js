@@ -172,7 +172,7 @@ const Book = (props) => {
     return <h4 style={inLineHeadingStyles}>{author}</h4>;
   };
 
-  // Add event to display the title of the books
+  // Add event to display the title of the books, use it in 'onClick' action to a button
   const displayTitle = () => {
     console.log(title);
   };

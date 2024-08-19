@@ -83,6 +83,14 @@ const Author = () => {
 
 // Mapping values inside an array
 function BookList() {
+  // Declaring the value to pass down from parent to child element
+  const someValue = 'shakeAndBake';
+
+  // Function to print value in the console
+  const displayValue = () => {
+    console.log(someValue);
+  };
+
   return (
     <section className = "booklist">
       <EventExamples />
@@ -95,6 +103,7 @@ function BookList() {
             title = {title}
             author = {author.toUpperCase()}
             key = {id}
+            displayValue = {displayValue}
           ></Book>
         );
       })}
@@ -148,7 +157,7 @@ const Book = (props) => {
   console.log(props);
 
   // Setup deconstruction
-  const { img, title, author } = props;
+  const { img, title, author, displayValue } = props;
 
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src = {img} alt = {title}></img>;
@@ -162,6 +171,7 @@ const Book = (props) => {
     };
     return <h4 style={inLineHeadingStyles}>{author}</h4>;
   };
+
   // Add event to display the title of the books
   const displayTitle = () => {
     console.log(title);
@@ -172,7 +182,7 @@ const Book = (props) => {
     <article className = "book">
       <Image />
       <Title />
-      <button onClick = {displayTitle}>display title</button>
+      <button onClick = {displayValue}>display value</button>
       <Author />
     </article>
   );

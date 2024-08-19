@@ -912,3 +912,61 @@ const Book = (props) => {
   );
 };
 ```
+
+### Prop Drilling
+
+- React data flow - can only pass props down
+- Alternatives Context API, redux, others state libraries
+
+```js
+function BookList() {
+  const someValue = 'shakeAndBake';
+  const displayValue = () => {
+    console.log(someValue);
+  };
+  return (
+    <section className = "booklist">
+      {books.map((book) => {
+        console.log(book);
+        const { id, img, title, author } = book;
+        return (
+          <Book
+            img = {img}
+            title = {title}
+            author = {author.toUpperCase()}
+            key = {id}
+          ></Book>
+        );
+      })}
+    </section>
+  );
+};
+
+const Book = (props) => {
+  const { img, title, author } = props;
+
+  const Image = () => <img src = {img} alt = {title}></img>;
+  const Title = () => <h2>{title}</h2>;
+  const Author = () => {
+    const inLineHeadingStyles = {
+      color: "#617d98",
+      fontSize: "0.75rem",
+      marginTop: "0.5rem",
+    };
+    return <h4 style={inLineHeadingStyles}>{author}</h4>;
+  };
+
+  const displayTitle = () => {
+    console.log(title);
+  };
+
+  return (
+    <article className = "book">
+      <Image />
+      <Title />
+      <button onClick = {displayTitle}>display title</button>
+      <Author />
+    </article>
+  );
+};
+```

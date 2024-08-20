@@ -712,7 +712,7 @@ btn.addEventListener("click", function (e) {
 - Again camelCase
 
 ```js
-const Eventexamples = () => {
+const EventExamples = () => {
   const handleButtonClick = () => {
     alert("handle button click");
   };
@@ -967,6 +967,51 @@ const Book = (props) => {
       <button onClick = {displayTitle}>display title</button>
       <Author />
     </article>
+  );
+};
+```
+
+### More Complex Example
+
+- Initial setup
+- Create getBook function in Booklist
+- Accepts ID as an argument and finds the book
+- [Javascript Nuggets - Filter and Find] (https://www.youtube.com/watch?v=KeYxsev737s&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=4)
+- Pass the function down to Book Component and invoke on the button click
+- In the Book Component destructure ID and function
+- Invoke the function when user clicks the button, pass the ID
+- The goal: you should see the same book in the console
+
+```js
+function BookList() {
+  // Function that will find the book and log the book on the console based on ID match 
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id);
+    console.log(book);
+  };
+
+  // Function to print value in the console
+  const displayValue = () => {
+    console.log(someValue);
+  };
+
+  return (
+    <section className = "booklist">
+      <EventExamples />
+      {books.map((book) => {
+        console.log(book);
+        const { id, img, title, author } = book;
+        return (
+          <Book
+            img = {img}
+            title = {title}
+            author = {author.toUpperCase()}
+            key = {id}
+            displayValue = {displayValue}
+          ></Book>
+        );
+      })}
+    </section>
   );
 };
 ```

@@ -86,9 +86,17 @@ function BookList() {
   // Declaring the value to pass down from parent to child element
   const someValue = 'shakeAndBake';
 
-  // Function to print value in the console
+  // Function to print value in the console, will be called by button in child element
+  // For this function to work, you will need to pass it as a prop to work with the child element
   const displayValue = () => {
     console.log(someValue);
+  };
+
+  //Function that will look for a book through the ID
+  // When referenced by child object, with the parameter inside parenthesis, it will invoke the function on page load
+  const getBook = (id) => {
+    const book = books.find((book)=> book.id === id);
+    console.log(book);
   };
 
   return (
@@ -103,7 +111,8 @@ function BookList() {
             title = {title}
             author = {author.toUpperCase()}
             key = {id}
-            displayValue = {displayValue}
+            // displayValue = {displayValue}
+            getBook = {getBook}
           ></Book>
         );
       })}
@@ -157,7 +166,7 @@ const Book = (props) => {
   console.log(props);
 
   // Setup deconstruction
-  const { img, title, author, displayValue } = props;
+  const { img, title, author, getBook, id} = props;
 
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src = {img} alt = {title}></img>;
@@ -182,7 +191,7 @@ const Book = (props) => {
     <article className = "book">
       <Image />
       <Title />
-      <button onClick = {displayValue}>display value</button>
+      <button onClick = {getBook(id)} >display value</button>
       <Author />
     </article>
   );

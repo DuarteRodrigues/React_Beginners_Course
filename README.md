@@ -1000,7 +1000,7 @@ function BookList() {
       <EventExamples />
       {books.map((book) => {
         console.log(book);
-        const { id, img, title, author } = book;
+        const { id, img, title, author} = book;
         return (
           <Book
             img = {img}
@@ -1008,10 +1008,96 @@ function BookList() {
             author = {author.toUpperCase()}
             key = {id}
             displayValue = {displayValue}
+            getBook = {getBook}
           ></Book>
         );
       })}
     </section>
   );
 };
+```
+
+- This will make the child element invoke the function on page load, even if you place the function inside a 'onClick' condition
+
+### Complex Example Fix
+
+- There are two fixes for this issue
+- First option: Setup wrapper
+
+```js
+const Book = (props) => {
+  const { img, title, author, displayValue, getBook , id} = props;
+  // console.log(props);
+
+  //Setup a wrapper
+  const getSingleBook = () => {
+    getBook(id);
+  };
+  
+  // Create the 'const' type objects inside the function when using props
+  const Image = () => <img src = {img} alt = {title}></img>;
+  const Title = () => <h2>{title}</h2>;
+  // Add inline styling with JSX
+  const Author = () => {
+    const inLineHeadingStyles = {
+      color: "#617d98",
+      fontSize: "0.75rem",
+      marginTop: "0.5rem",
+    };
+    return <h4 style={inLineHeadingStyles}>{author}</h4>;
+  };
+
+  // Add event to display the title of the books, use it in 'onClick' action to a button
+  const displayTitle = () => {
+    console.log(title);
+  };
+
+  // Call for all the elements to be from the book to be shown
+  return (
+    <article className = "book">
+      <Image />
+      <Title />
+      <button onClick = {getSingleBook} >display title</button>
+      <Author />
+    </article>
+  );\
+};
+```
+
+- Second Option: wrap in the anonymous arrow function
+
+```js
+const Book = (props) => {
+  const { img, title, author, displayValue, getBook , id} = props;
+  // console.log(props);
+  
+  // Create the 'const' type objects inside the function when using props
+  const Image = () => <img src = {img} alt = {title}></img>;
+  const Title = () => <h2>{title}</h2>;
+  // Add inline styling with JSX
+  const Author = () => {
+    const inLineHeadingStyles = {
+      color: "#617d98",
+      fontSize: "0.75rem",
+      marginTop: "0.5rem",
+    };
+    return <h4 style={inLineHeadingStyles}>{author}</h4>;
+  };
+
+  // Add event to display the title of the books, use it in 'onClick' action to a button
+  const displayTitle = () => {
+    console.log(title);
+  };
+
+  // Call for all the elements to be from the book to be shown
+  return (
+    <article className = "book">
+      <Image />
+      <Title />
+      <button onClick = {() => getBook(id)} >display title</button>
+      <Author />
+    </article>
+  );\
+};
+
 ```

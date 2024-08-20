@@ -50,7 +50,7 @@ const someFunc = (param1, param2) => {
 };
 
 // Call
-someFunc("job", "developer"); // Output: Hello World
+// someFunc("job", "developer"); // Output: Hello World
 
 // Elements with place holders
 /*
@@ -94,8 +94,9 @@ function BookList() {
 
   //Function that will look for a book through the ID
   // When referenced by child object, with the parameter inside parenthesis, it will invoke the function on page load
+  // Use 'key' in 'book.key' instead of 'book.id'
   const getBook = (id) => {
-    const book = books.find((book)=> book.id === id);
+    const book = books.find((book) => book.key === id);
     console.log(book);
   };
 
@@ -103,15 +104,16 @@ function BookList() {
     <section className = "booklist">
       <EventExamples />
       {books.map((book) => {
-        console.log(book);
-        const { id, img, title, author } = book;
+        // Check if the props were mapped correctly
+        // console.log(book);
+        const { id, img, title, author} = book;
         return (
           <Book
             img = {img}
             title = {title}
             author = {author.toUpperCase()}
             key = {id}
-            // displayValue = {displayValue}
+            // displayValue = {displayValue} <- Passing the function as prop
             getBook = {getBook}
           ></Book>
         );
@@ -163,7 +165,7 @@ const EventExamples = () => {
 // Book element
 const Book = (props) => {
   // Check if values were passed correctly
-  console.log(props);
+  // console.log(props);
 
   // Setup deconstruction
   const { img, title, author, getBook, id} = props;
@@ -186,12 +188,17 @@ const Book = (props) => {
     console.log(title);
   };
 
+  // Setup wrapper to add to the 'onClick' event
+  const getSingleBook = () => {
+    getBook(id);
+  }
+
   // Call for all the elements to be from the book to be shown
   return (
     <article className = "book">
       <Image />
       <Title />
-      <button onClick = {getBook(id)} >display value</button>
+      <button onClick = {getSingleBook} >display book</button>
       <Author />
     </article>
   );

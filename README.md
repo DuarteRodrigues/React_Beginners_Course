@@ -1099,5 +1099,4 @@ const Book = (props) => {
     </article>
   );\
 };
-
 ```

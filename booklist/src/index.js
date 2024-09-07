@@ -120,7 +120,7 @@ function BookList() {
       })}
     </section>
   );
-}
+};
 
 //Event Element
 const EventExamples = () => {
@@ -191,14 +191,14 @@ const Book = (props) => {
   // Setup wrapper to add to the 'onClick' event
   const getSingleBook = () => {
     getBook(id);
-  }
+  };
 
   // Call for all the elements to be from the book to be shown
   return (
     <article className = "book">
       <Image />
       <Title />
-      <button onClick = {getSingleBook} >display book</button>
+      <button onClick = {getSingleBook}>display book</button>
       <Author />
     </article>
   );

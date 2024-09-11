@@ -84,7 +84,7 @@ const Author = () => {
 // Mapping values inside an array
 function BookList() {
   // Declaring the value to pass down from parent to child element
-  const someValue = 'shakeAndBake';
+  const someValue = "shakeAndBake";
 
   // Function to print value in the console, will be called by button in child element
   // For this function to work, you will need to pass it as a prop to work with the child element
@@ -101,26 +101,26 @@ function BookList() {
   };
 
   return (
-    <section className = "booklist">
+    <section className="booklist">
       <EventExamples />
       {books.map((book) => {
         // Check if the props were mapped correctly
         // console.log(book);
-        const { id, img, title, author} = book;
+        const { id, img, title, author } = book;
         return (
           <Book
-            img = {img}
-            title = {title}
-            author = {author.toUpperCase()}
-            key = {id}
+            img={img}
+            title={title}
+            author={author.toUpperCase()}
+            key={id}
             // displayValue = {displayValue} <- Passing the function as prop
-            getBook = {getBook}
+            getBook={getBook}
           ></Book>
         );
       })}
     </section>
   );
-};
+}
 
 //Event Element
 const EventExamples = () => {
@@ -143,19 +143,24 @@ const EventExamples = () => {
 
   return (
     <section>
-      <form onSubmit = {handleFormSubmission}>
+      <form onSubmit={handleFormSubmission}>
         <h2>Typical Form</h2>
         <input
-          type = "text"
-          name = "example"
-          onChange = {handleFormInput}
-          style = {{ margin: "1rem 0" }}
+          type="text"
+          name="example"
+          onChange={handleFormInput}
+          style={{ margin: "1rem 0" }}
         ></input>
-        <button type = "submit">submit</button>
+        <button type="submit">submit</button>
         <div>
-        <button onClick = {handleButtonInput/* or () => console.log("form submitted"); */} type="button">
-          click me
-        </button>
+          <button
+            onClick={
+              handleButtonInput /* or () => console.log("form submitted"); */
+            }
+            type="button"
+          >
+            click me
+          </button>
         </div>
       </form>
     </section>
@@ -168,10 +173,10 @@ const Book = (props) => {
   // console.log(props);
 
   // Setup deconstruction
-  const { img, title, author, getBook, id} = props;
+  const { img, title, author, getBook, id } = props;
 
   // Create the 'const' type objects inside the function when using props
-  const Image = () => <img src = {img} alt = {title}></img>;
+  const Image = () => <img src={img} alt={title}></img>;
   const Title = () => <h2>{title}</h2>;
   // Add inline styling with JSX
   const Author = () => {
@@ -195,10 +200,10 @@ const Book = (props) => {
 
   // Call for all the elements to be from the book to be shown
   return (
-    <article className = "book">
+    <article className="book">
       <Image />
       <Title />
-      <button onClick = {getSingleBook}>display book</button>
+      <button onClick={getSingleBook}>display book</button>
       <Author />
     </article>
   );

@@ -96,7 +96,7 @@ function BookList() {
   // When referenced by child object, with the parameter inside parenthesis, it will invoke the function on page load
   // Use 'key' in 'book.key' instead of 'book.id'
   const getBook = (id) => {
-    const book = books.find((book) => book.key === id);
+    const book = books.find((book) => book.id === id);
     console.log(book);
   };
 
@@ -112,6 +112,7 @@ function BookList() {
             img={img}
             title={title}
             author={author.toUpperCase()}
+            id={id}
             key={id}
             // displayValue = {displayValue} <- Passing the function as prop
             getBook={getBook}

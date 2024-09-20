@@ -859,9 +859,9 @@ const EventExamples = () => {
 - Alternative approach
 
 ```js
-  <button type='submit' onClick={handleFormSubmission}>
+<button type="submit" onClick={handleFormSubmission}>
   submit form
-  </button>
+</button>
 ```
 
 ### Mind Grenade - Arrow Functions
@@ -874,7 +874,7 @@ const EventExamples = () => {
 const EventExamples = () => {
   return (
     <section>
-      <button onClick={() => console.log('hello there')}>click me</button>
+      <button onClick={() => console.log("hello there")}>click me</button>
     </section>
   );
 };
@@ -888,9 +888,9 @@ const EventExamples = () => {
 ```js
 function Booklist() {
   return (
-    <section className = 'booklist'>
+    <section className="booklist">
       {books.map((book) => {
-        return <Book {...book} key = {book.id} />;
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
@@ -900,13 +900,13 @@ const Book = (props) => {
   const { img, title, author } = props;
   const displayTitle = () => {
     console.log(title);
-  }
+  };
 
   return (
     <article className="book">
       <Image />
       <Title />
-      <button onClick = {displayTitle}>display title</button>
+      <button onClick={displayTitle}>display title</button>
       <Author />
     </article>
   );
@@ -920,32 +920,32 @@ const Book = (props) => {
 
 ```js
 function BookList() {
-  const someValue = 'shakeAndBake';
+  const someValue = "shakeAndBake";
   const displayValue = () => {
     console.log(someValue);
   };
   return (
-    <section className = "booklist">
+    <section className="booklist">
       {books.map((book) => {
         console.log(book);
         const { id, img, title, author } = book;
         return (
           <Book
-            img = {img}
-            title = {title}
-            author = {author.toUpperCase()}
-            key = {id}
+            img={img}
+            title={title}
+            author={author.toUpperCase()}
+            key={id}
           ></Book>
         );
       })}
     </section>
   );
-};
+}
 
 const Book = (props) => {
   const { img, title, author } = props;
 
-  const Image = () => <img src = {img} alt = {title}></img>;
+  const Image = () => <img src={img} alt={title}></img>;
   const Title = () => <h2>{title}</h2>;
   const Author = () => {
     const inLineHeadingStyles = {
@@ -961,10 +961,10 @@ const Book = (props) => {
   };
 
   return (
-    <article className = "book">
+    <article className="book">
       <Image />
       <Title />
-      <button onClick = {displayTitle}>display title</button>
+      <button onClick={displayTitle}>display title</button>
       <Author />
     </article>
   );
@@ -984,7 +984,7 @@ const Book = (props) => {
 
 ```js
 function BookList() {
-  // Function that will find the book and log the book on the console based on ID match 
+  // Function that will find the book and log the book on the console based on ID match
   const getBook = (id) => {
     const book = books.find((book) => book.id === id);
     console.log(book);
@@ -996,25 +996,25 @@ function BookList() {
   };
 
   return (
-    <section className = "booklist">
+    <section className="booklist">
       <EventExamples />
       {books.map((book) => {
         console.log(book);
-        const { id, img, title, author} = book;
+        const { id, img, title, author } = book;
         return (
           <Book
-            img = {img}
-            title = {title}
-            author = {author.toUpperCase()}
-            key = {id}
-            displayValue = {displayValue}
-            getBook = {getBook}
+            img={img}
+            title={title}
+            author={author.toUpperCase()}
+            key={id}
+            displayValue={displayValue}
+            getBook={getBook}
           ></Book>
         );
       })}
     </section>
   );
-};
+}
 ```
 
 - This will make the child element invoke the function on page load, even if you place the function inside a 'onClick' condition
@@ -1033,7 +1033,7 @@ const Book = (props) => {
   const getSingleBook = () => {
     getBook(id);
   };
-  
+
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src = {img} alt = {title}></img>;
   const Title = () => <h2>{title}</h2>;
@@ -1070,7 +1070,7 @@ const Book = (props) => {
 const Book = (props) => {
   const { img, title, author, displayValue, getBook , id} = props;
   // console.log(props);
-  
+
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src = {img} alt = {title}></img>;
   const Title = () => <h2>{title}</h2>;
@@ -1100,3 +1100,57 @@ const Book = (props) => {
   );\
 };
 ```
+
+### Import and Export Statements
+
+- Helps the developer to organize the application
+- Remove all getBook code
+
+```js
+function BookList() {
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
+
+const Book = (props) => {
+  const { img, title, author } = props;
+
+  return (
+    <article className="book">
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>
+  );
+};
+```
+
+- setup two files in src books.js and Book.js
+- cut books array from index.js
+- add to books.js
+
+books.js
+
+```js
+const books = [
+  {
+    id: 1,
+    img: "./IMG/book-1.jpg",
+    title: "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)",
+    author: "Rebecca Yarros",
+  },
+  {
+    id: 2,
+    img: "./IMG/book-2.jpg",
+    title: "I Love You to the Moon and Back",
+    author: "Amelia Hepworth",
+  },
+];
+```
+
+- To use data between files, use 'export default **\_**' at the end of each file whose data you wish to export

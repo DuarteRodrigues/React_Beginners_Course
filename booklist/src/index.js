@@ -4,45 +4,8 @@ import ReactDOM from "react-dom/client";
 
 // Project assets
 import "./CSS/index.css";
-
-// Props
-/// Individual Props
-/*
-const img = './IMG/book-1.jpg';
-const title = 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)';
-const author = 'Rebecca Yarros';
-*/
-
-/// Structures of props
-/*
-const firstBook = {
-  img: './IMG/book-1.jpg',
-  title: 'Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)',
-  author: 'Rebecca Yarros'
-}
-
-const secondBook = {
-  img: './IMG/book-2.jpg',
-  title: 'I Love You to the Moon and Back',
-  author: 'Amelia Hepworth'
-}
-*/
-
-/// List of props
-const books = [
-  {
-    id: 1,
-    img: "./IMG/book-1.jpg",
-    title: "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)",
-    author: "Rebecca Yarros",
-  },
-  {
-    id: 2,
-    img: "./IMG/book-2.jpg",
-    title: "I Love You to the Moon and Back",
-    author: "Amelia Hepworth",
-  },
-];
+import { books } from "./books.js";
+import Book from "./Book.js";
 
 // Parameters
 const someFunc = (param1, param2) => {
@@ -167,63 +130,6 @@ const EventExamples = () => {
     </section>
   );
 };
-
-// Book element
-const Book = (props) => {
-  // Check if values were passed correctly
-  // console.log(props);
-
-  // Setup deconstruction
-  const { img, title, author, getBook, id } = props;
-
-  // Create the 'const' type objects inside the function when using props
-  const Image = () => <img src={img} alt={title}></img>;
-  const Title = () => <h2>{title}</h2>;
-  // Add inline styling with JSX
-  const Author = () => {
-    const inLineHeadingStyles = {
-      color: "#617d98",
-      fontSize: "0.75rem",
-      marginTop: "0.5rem",
-    };
-    return <h4 style={inLineHeadingStyles}>{author}</h4>;
-  };
-
-  // Add event to display the title of the books, use it in 'onClick' action to a button
-  const displayTitle = () => {
-    console.log(title);
-  };
-
-  // Setup wrapper to add to the 'onClick' event
-  const getSingleBook = () => {
-    getBook(id);
-  };
-
-  // Call for all the elements to be from the book to be shown
-  return (
-    <article className="book">
-      <Image />
-      <Title />
-      <button onClick={getSingleBook}>display book</button>
-      <Author />
-    </article>
-  );
-};
-
-//Using JSX to render elements
-/*
-const Book = () => {
-  const Title = "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)"; <- These values can be declared outside the function
-  const Author = "Rebecca Yarros";
-  return (
-    <article className='book'>
-      <Image />
-      <h2>{Title}</h2>
-      <h4>{Author.toUpperCase()}</h4>
-    </article>
-  );
-};
-*/
 
 // Fetch root element in HTML file
 const root = ReactDOM.createRoot(document.getElementById("root"));

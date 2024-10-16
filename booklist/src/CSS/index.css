@@ -26,7 +26,10 @@ body{
 }
 
 .book img{
-    object-fit: cover;
+    margin: 0;
+    height: auto;
+    max-height: 12rem;
+    object-fit: contain;
     width: 100%;
 }
 

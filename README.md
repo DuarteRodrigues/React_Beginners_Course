@@ -1154,3 +1154,39 @@ const books = [
 ```
 
 - To use data between files, use 'export default **\_**' at the end of each file whose data you wish to export
+
+### Local Images (src folder)
+
+- better performance, as it is optimized
+- add one more book to the array
+- download all 3 images and rename them
+- setup images folder in src folder
+- import all three images in books.js
+- set image property equal to import
+- each image requires a new import
+
+```js
+import img1 from './images/book-1.jpg';
+import img2 from './images/book-2.jpg';
+import img3 from './images/book-3.jpg';
+
+export const books = [
+  {
+    id: 1,
+    img: img1,
+    title: "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)",
+    author: "Rebecca Yarros",
+  },
+  {
+    id: 2,
+    img: img2,
+    title: "I Love You to the Moon and Back",
+    author: "Amelia Hepworth",
+  },
+  {
+    id: 3,
+    img: img3,
+    title: "War",
+    author:"Bob Woodward",
+  }
+];

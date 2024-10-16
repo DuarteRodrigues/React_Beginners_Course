@@ -21,19 +21,30 @@ const secondBook = {
 }
 */
 
+//import values from directory
+import img1 from './IMG/book-1.jpg';
+import img2 from './IMG/book-2.jpg';
+import img3 from './IMG/book-3.jpg';
+
 // List of props
 // Apply the "export" kw for const to be used in other pages
 export const books = [
   {
     id: 1,
-    img: "./IMG/book-1.jpg",
+    img: img1,
     title: "Onyx Storm (Deluxe Limited Edition) (The Empyrean, 3)",
     author: "Rebecca Yarros",
   },
   {
     id: 2,
-    img: "./IMG/book-2.jpg",
+    img: img2,
     title: "I Love You to the Moon and Back",
     author: "Amelia Hepworth",
+  },
+  {
+    id: 3,
+    img: img3,
+    title: "War",
+    author: "Bob Woodward",
   },
 ];

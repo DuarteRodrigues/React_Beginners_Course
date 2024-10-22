@@ -64,26 +64,29 @@ function BookList() {
   };
 
   return (
-    <section className="booklist">
-      <EventExamples />
-      {books.map((book, index) => {
-        // Check if the props were mapped correctly
-        // console.log(book);
-        const { id, img, title, author } = book;
-        return (
-          <Book
-            img={img}
-            title={title}
-            author={author.toUpperCase()}
-            id={id}
-            key={id}
-            number={index}
-            // displayValue = {displayValue} <- Passing the function as prop
-            getBook={getBook}
-          ></Book>
-        );
-      })}
-    </section>
+    <>
+      <h1>Book List</h1>
+      <section className="booklist">
+        <EventExamples />
+        {books.map((book, index) => {
+          // Check if the props were mapped correctly
+          // console.log(book);
+          const { id, img, title, author } = book;
+          return (
+            <Book
+              img={img}
+              title={title}
+              author={author.toUpperCase()}
+              id={id}
+              key={id}
+              number={index}
+              // displayValue = {displayValue} <- Passing the function as prop
+              getBook={getBook}
+            ></Book>
+          );
+        })}
+      </section>
+    </>
   );
 }
 

@@ -1198,9 +1198,9 @@ export const books = [
 - Do not worry about css
 - Hint - use index (second parameter in map)
 
-```js
-// In Book.js
+Book.js
 
+```js
 const Book = (props) => {
   const { img, title, author, getBook, id, number } = props;
 
@@ -1213,6 +1213,8 @@ const Book = (props) => {
   );
 };
 ```
+
+index.css
 
 ```css
 .book {
@@ -1233,5 +1235,37 @@ const Book = (props) => {
   border-bottom-right-radius: 1rem;
   background: #c35600;
   color: #fff;
+}
+```
+
+### Adding Title
+
+- Add a title to the app (css is optional)
+- Change page title
+
+index.js
+
+```js
+function BookList() {
+  return (
+    <>
+      <h1>amazon best sellers</h1>
+      <section className="booklist">
+        {books.map((book, index) => {
+          return <Book {...book} key={book.id} />;
+        })}
+      </section>
+    </>
+  );
+}
+```
+
+index.css (optional)
+
+```css
+h1 {
+  margin-top: 4rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 ```

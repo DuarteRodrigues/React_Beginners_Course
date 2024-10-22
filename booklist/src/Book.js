@@ -4,7 +4,7 @@ const Book = (props) => {
   // console.log(props);
 
   // Setup deconstruction
-  const { img, title, author, getBook, id } = props;
+  const { img, title, author, getBook, id, number } = props;
 
   // Create the 'const' type objects inside the function when using props
   const Image = () => <img src={img} alt={title}></img>;
@@ -18,6 +18,9 @@ const Book = (props) => {
     };
     return <h4 style={inLineHeadingStyles}>{author}</h4>;
   };
+
+  // Const to display element with list number of each book
+  const Number = () => <span className="number">{`#${number + 1}`}</span>;
 
   // Add event to display the title of the books, use it in 'onClick' action to a button
   const displayTitle = () => {
@@ -37,6 +40,7 @@ const Book = (props) => {
       <Title />
       <button onClick={getSingleBook}>display book</button>
       <Author />
+      <Number />
     </article>
   );
 };

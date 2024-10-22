@@ -1166,9 +1166,9 @@ const books = [
 - each image requires a new import
 
 ```js
-import img1 from './images/book-1.jpg';
-import img2 from './images/book-2.jpg';
-import img3 from './images/book-3.jpg';
+import img1 from "./images/book-1.jpg";
+import img2 from "./images/book-2.jpg";
+import img3 from "./images/book-3.jpg";
 
 export const books = [
   {
@@ -1187,6 +1187,17 @@ export const books = [
     id: 3,
     img: img3,
     title: "War",
-    author:"Bob Woodward",
-  }
+    author: "Bob Woodward",
+  },
 ];
+```
+
+### Challenges
+
+- Setup numbers
+- Do not worry about css
+- Hint - use index (second parameter in map)
+
+```js
+
+```

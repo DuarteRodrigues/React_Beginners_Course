@@ -1,54 +1,68 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background: #f1f5f8;
-    color: #222;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  background: #f1f5f8;
+  color: #222;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.booklist{
-    display: grid;
-    gap: 2rem;
-    margin: 5rem auto;
-    max-width: 1170px;
-    width: 90vw;
+.booklist {
+  display: grid;
+  gap: 2rem;
+  margin: 5rem auto;
+  max-width: 1170px;
+  width: 90vw;
 }
 
-.book{
-    background: #fff;
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
 }
 
-.book img{
-    margin: 0;
-    height: auto;
-    max-height: 12rem;
-    object-fit: contain;
-    width: 100%;
+.book img {
+  margin: 0;
+  height: auto;
+  max-height: 12rem;
+  object-fit: contain;
+  width: 100%;
 }
 
-.book h2{
-    font-size: 1rem;
-    margin-top: 1rem;
+.book h2 {
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
-.book h4{
-    letter-spacing: 2px;
+.book h4 {
+  letter-spacing: 2px;
 }
 
-.book p{
-    margin: 1rem 0 0.5rem;
+.book p {
+  margin: 1rem 0 0.5rem;
 }
 
-@media screen and (min-width:768px) {
-    .booklist{
-        align-items: start;
-        grid-template-columns: repeat(3, 1fr);
-    }
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

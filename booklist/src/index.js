@@ -66,7 +66,7 @@ function BookList() {
   return (
     <section className="booklist">
       <EventExamples />
-      {books.map((book) => {
+      {books.map((book, index) => {
         // Check if the props were mapped correctly
         // console.log(book);
         const { id, img, title, author } = book;
@@ -77,6 +77,7 @@ function BookList() {
             author={author.toUpperCase()}
             id={id}
             key={id}
+            number={index}
             // displayValue = {displayValue} <- Passing the function as prop
             getBook={getBook}
           ></Book>

@@ -1199,5 +1199,39 @@ export const books = [
 - Hint - use index (second parameter in map)
 
 ```js
+// In Book.js
 
+const Book = (props) => {
+  const { img, title, author, getBook, id, number } = props;
+
+  // Const with html elements
+  const Number = () => <span className="number">{`#${number + 1}`}</span>;
+
+  return (
+    //Call element
+    <Number />
+  );
+};
+```
+
+```css
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
+}
 ```

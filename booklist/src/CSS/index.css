@@ -30,7 +30,7 @@ body {
 .book img {
   margin: 0;
   height: auto;
-  max-height: 12rem;
+  max-height: 11rem;
   object-fit: contain;
   width: 100%;
 }

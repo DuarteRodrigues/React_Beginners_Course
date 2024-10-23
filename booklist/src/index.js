@@ -67,7 +67,7 @@ function BookList() {
     <>
       <h1>Book List</h1>
       <section className="booklist">
-        <EventExamples />
+        
         {books.map((book, index) => {
           // Check if the props were mapped correctly
           // console.log(book);
@@ -85,6 +85,7 @@ function BookList() {
             ></Book>
           );
         })}
+        <EventExamples />
       </section>
     </>
   );

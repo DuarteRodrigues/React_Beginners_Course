@@ -1269,3 +1269,16 @@ h1 {
   text-transform: capitalize;
 }
 ```
+
+### Build Production Application
+
+- Stop the dev server "ctrl + c"~
+- Run "npm run build"
+- Build folder gets created
+
+### Netlify
+
+- Sign in/up
+- Add new site/deploy manually
+- Choose build folder
+- Rename site - site settings/change site name
